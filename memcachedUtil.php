@@ -1,8 +1,6 @@
 <html>
-    <body>
+<body>
 <?php
-
-include_once('session.php');
 
 $keys = $memcached->getAllKeys();
 
@@ -32,11 +30,8 @@ if( isset($_REQUEST['key']))  {
             echo $key .' - ' .$value;
         }
     }
-
 } else if( isset($_REQUEST['exc'])) {
-    
     $memcached->delete($_REQUEST['exc']);
-    
 }
 
 ?>
@@ -45,20 +40,19 @@ if( isset($_REQUEST['key']))  {
 <a href="memcachedUtil.php?stat=S">Estatísticas</a>
 <hr>
         
-<table border=1 style="width: 100%;">
+<table border=1 width="100%">
 <tr><td width="5%">#</td><td width="20%">Chave</td><td width="70%">Valor</td><td width="5%">Ação</td></tr>
 <?php
 $keys = $memcached->getAllKeys();
 $i = 0;
 foreach ($keys as $key => $value) {
-    echo '<tr><td width="5%">'.++$i.'</td><td width="20%"><a href="memcachedUtil.php?key='.$value.'">'.$value.'</a></td>';
+    echo '<tr><td>'.++$i.'</td><td><a href="memcachedUtil.php?key='.$value.'">'.$value.'</a></td>';
     $a = $memcached->get($value);
-    echo '<td width="70%">';
+    echo '<td>';
     foreach ($a as $k => $v) {
         if( is_array($v) ) {
             $valor = '';
             foreach ($v as $vv => $vvv) {
-                //echo $vvv.';';
                 $valor .= $vvv.'; ';
             }
             echo wordwrap($valor,60,"<br />\n");
@@ -66,7 +60,7 @@ foreach ($keys as $key => $value) {
             echo '***'.$v;
         }
     }
-    echo '</td><td width="5%"><a href="memcachedUtil.php?exc='.$value.'">[Excluir]</a></td></tr>';
+    echo '</td><td><a href="memcachedUtil.php?exc='.$value.'">[Excluir]</a></td></tr>';
 }
 ?>
 
