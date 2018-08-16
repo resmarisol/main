@@ -4,7 +4,7 @@ SET NOCOUNT ON
 * Embaralhar string
 */
 
-DECLARE @STRING      VARCHAR(MAX) = 'SARA GRACIANO DA ROCHA', 
+DECLARE @STRING      VARCHAR(MAX) = 'TESTE DE EMBARALHAR STRING', 
         @NOVA_STRING VARCHAR(MAX) = '',
         @TAM         INT          = 0, 
         @X           INT          = 1, 
