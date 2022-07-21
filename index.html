@@ -51,7 +51,7 @@ summary { font-size: 24px; }
 <details id="fotos">
   <summary>Fotos Sistema de Incêndio</summary>
 
-  <details><summary style="padding-left: 20px;">Antes</summary>
+  <details id="antes"><summary style="padding-left: 20px;">Antes</summary>
 <div class="row">
       <div class="col-lg-12">
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -110,7 +110,7 @@ summary { font-size: 24px; }
 </div>
 </details>
 
-<details><summary style="padding-left: 20px;">Depois</summary>
+<details id="depois"><summary style="padding-left: 20px;">Depois</summary>
   <div class="row">
         <div class="col-lg-12">
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -210,6 +210,14 @@ $(document).ready(function() {
    $('.carousel').carousel({
      interval: 2000
    });
+    
+  $('#antes').click(function (event) {
+    $('#depois').removeAttr("open");  
+  });
+  $('#depois').click(function (event) {
+    $('#antes').removeAttr("open");  
+  });
+    
 });
 </script>
 
