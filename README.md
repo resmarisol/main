@@ -1,3 +1,3 @@
-# edital
+# Objetivo
 
-Edital de Convocação de Assembléia para o condomínio Mirasol.
+Uma parte do edital de Convocação de Assembléia para o condomínio Mirasol.
