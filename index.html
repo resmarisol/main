@@ -210,6 +210,13 @@ $(document).ready(function() {
    $('.carousel').carousel({
      interval: 2000
    });
+
+  $('#fotos').click(function (event) {
+    $('#orcamentos').removeAttr("open");  
+  });
+  $('#orcamentos').click(function (event) {
+    $('#fotos').removeAttr("open");  
+  });
     
   $('#antes').click(function (event) {
     $('#depois').removeAttr("open");  
